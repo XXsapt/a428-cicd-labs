@@ -1,14 +1,14 @@
 pipeline {
     agent {
         docker {
-            image 'node:16-buster-slim'
-            args '--privileged --env DOCKER_TLS_CERTDIR= '
+            image 'node:16-buster-slim' 
+            args '-p 3000:3000' 
         }
     }
     stages {
-        stage('Build') {
+        stage('Build') { 
             steps {
-                sh 'node --version'
+                sh 'npm install'
             }
         }
     }
