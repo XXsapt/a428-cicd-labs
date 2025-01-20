@@ -6,13 +6,6 @@ pipeline {
         }
     }
     stages {
-        stage('Checkout') {
-            steps {
-                git branch: 'main', url: 'https://github.com/XXsapt/a428-cicd-labs.git'
-            }
-        }
-    }
-    stages {
         stage('Build') {
             steps {
                 sh 'npm install'
